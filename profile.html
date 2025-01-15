@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - GuardianX</title>
+    <link rel="stylesheet" href="profile style.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<div class="header">
+    <h1>Your Profile</h1>
+    <p>Manage your personal information and settings</p>
+</div>
+
+<!-- Container Section -->
+<div class="container">
+    <!-- User Information Display Section -->
+    <div class="user-info">
+        <h2>Profile Information</h2>
+        <div class="info-row">
+            <label for="user-name">Name:</label>
+            <span id="user-name">John Doe</span>
+        </div>
+        <div class="info-row">
+            <label for="user-email">Email:</label>
+            <span id="user-email">john.doe@example.com</span>
+        </div>
+        <div class="info-row">
+            <label for="user-phone">Phone:</label>
+            <span id="user-phone">+1 (123) 456-7890</span>
+        </div>
+        <div class="info-row">
+            <label for="user-address">Address:</label>
+            <span id="user-address">1234 Elm St, Springfield, IL</span>
+        </div>
+        <div class="info-row">
+            <label for="user-blood-type">Blood Type:</label>
+            <span id="user-blood-type">O+</span>
+        </div>
+        <div class="info-row">
+            <label for="user-medical-history">Medical History:</label>
+            <span id="user-medical-history">None</span>
+        </div>
+    </div>
+
+    <!-- Edit Profile Section -->
+    <div class="edit-profile">
+        <h2>Edit Your Profile</h2>
+        <form id="profile-form">
+            <div class="form-group">
+                <label for="edit-name">Name:</label>
+                <input type="text" id="edit-name" name="edit-name" value="John Doe" required>
+            </div>
+            <div class="form-group">
+                <label for="edit-email">Email:</label>
+                <input type="email" id="edit-email" name="edit-email" value="john.doe@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="edit-phone">Phone:</label>
+                <input type="tel" id="edit-phone" name="edit-phone" value="+1 (123) 456-7890" required>
+            </div>
+            <div class="form-group">
+                <label for="edit-address">Address:</label>
+                <input type="text" id="edit-address" name="edit-address" value="1234 Elm St, Springfield, IL" required>
+            </div>
+            <div class="form-group">
+                <label for="edit-blood-type">Blood Type:</label>
+                <input type="text" id="edit-blood-type" name="edit-blood-type" value="O+" required>
+            </div>
+            <div class="form-group">
+                <label for="edit-medical-history">Medical History:</label>
+                <textarea id="edit-medical-history" name="edit-medical-history" required>None</textarea>
+            </div>
+            <button type="submit" class="btn">Save Changes</button>
+        </form>
+    </div>
+
+    <!-- Change Password Section -->
+    <div class="change-password">
+        <h2>Change Password</h2>
+        <form id="password-form">
+            <div class="form-group">
+                <label for="old-password">Old Password:</label>
+                <input type="password" id="old-password" name="old-password" required>
+            </div>
+            <div class="form-group">
+                <label for="new-password">New Password:</label>
+                <input type="password" id="new-password" name="new-password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm New Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <button type="submit" class="btn">Change Password</button>
+        </form>
+    </div>
+
+    <!-- Delete Account Section -->
+    <div class="delete-account">
+        <h2>Delete Account</h2>
+        <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+        <button class="btn delete-btn" onclick="deleteAccount()">Delete Account</button>
+    </div>
+
+    <!-- Back to Home Button -->
+    <a href="index.html" class="btn">Back to Home</a>
+</div>
+
+<!-- Footer Section -->
+<div class="footer">
+    <p>&copy; 2025 GuardianX. All rights reserved.</p>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

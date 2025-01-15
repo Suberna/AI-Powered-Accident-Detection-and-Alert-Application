@@ -1,0 +1,22 @@
+/* Additional Styles for Logout Page */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.confirm-btn {
+    background-color: #ff6600;
+}
+
+.confirm-btn:hover {
+    background-color: #e65c00;
+}
+
+.cancel-btn {
+    background-color: #cccccc;
+}
+
+.cancel-btn:hover {
+    background-color: #aaaaaa;
+}

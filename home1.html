@@ -1,0 +1,64 @@
+<!-- Home Page - index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - GuardianX</title>
+    <link rel="stylesheet" href="home1 style.css">
+</head>
+<body>
+
+<div class="header">
+    <h1>Welcome to GuardianX</h1>
+    <p>Empowering your safety</p>
+</div>
+
+<div class="container">
+    <h2>Hello, <span id="user-name">User</span>!</h2>
+    <div class="nav-links">
+        <a href="accident-detection.html" class="btn">Accident Detection</a>
+        <a href="profile.html" class="btn">Profile</a>
+        <a href="login1.html" class="btn">Logout</a>
+    </div>
+
+    <!-- Emergency Button -->
+    <button class="emergency-btn" id="emergency-btn" onclick="startEmergency()">Emergency Alert</button>
+
+    <!-- Success Message -->
+    <p id="success-message" class="success-message" style="display:none;">Alert Sent! Help is on the way.</p>
+
+    <!-- File Upload Section -->
+    <div class="file-upload">
+        <input type="file" id="file-input" accept="image/*">
+        <button onclick="handleFileUpload()">Upload Image</button>
+    </div>
+
+    <!-- Report Section -->
+    <div class="report-section">
+        <h3>Report</h3>
+        <div id="report-output" class="report-output"></div>
+    </div>
+
+    <!-- Precautions Section -->
+    <div class="precautions-section">
+        <h3>Precautions to Follow</h3>
+        <div id="precautions-output" class="precautions-output"></div>
+    </div>
+    
+
+    <!-- Google Map to show location -->
+    <div id="google-map" class="google-map"></div>
+</div>
+
+
+
+<div class="footer">
+    <p>&copy; 2025 GuardianX. All rights reserved.</p>
+</div>
+
+<script src="home1 script.js"></script>
+
+</body>
+</html>

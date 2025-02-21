@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuardianX - Saving Life in Your Hands</title>
+    <link rel="stylesheet" href="save style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>GuardianX</h1>
+        <p>Saving Life in Your Hands</p>
+    </header>
+
+    <section>
+        <h2 class="section-title">Introduction</h2>
+        <p><strong>Problem Identified:</strong> Accidents often go unnoticed or are reported late, delaying emergency responses and risking lives.</p>
+        <p><strong>Proposed Solution:</strong> GuardianX is an AI-powered mobile application that detects and classifies accidents by analyzing images and videos captured through the app. It provides detailed reports containing GPS coordinates and supporting media while offering offline functionality through SMS-based reporting.</p>
+    </section>
+
+    <section>
+        <h2 class="section-title">How It Works</h2>
+        <div class="how-it-works">
+            <!-- Steps content -->
+        </div>
+    </section>
+
+    <div id="camera-stream">
+        <video id="live-video" autoplay></video>
+        <button id="capture-button">Capture Photo</button>
+        <button id="upload-button">Upload from Device</button>
+        <button id="cancel-camera">Cancel</button>
+        <input type="file" id="file-input" accept="image/,video/" style="display:none;">
+    </div>
+
+    <div class="gps-options" id="gps-options">
+        <p>Your current location is: <span id="gps-coordinates"></span></p>
+        <button id="open-map">Open in Google Maps</button>
+        <button id="cancel-gps">Cancel</button>
+    </div>
+
+    <section>
+        <h2 class="section-title">Beyond Road Safety</h2>
+        <ul>
+            <!-- List items -->
+        </ul>
+    </section>
+
+    <footer>
+        <p>Developed by Sivasanjay V, Ashvant Narayan Y, Suberna R S</p>
+        <p><a href="#" id="contact-link">Contact Us</a></p>
+    </footer>
+
+    <div class="modal-overlay" id="modal-overlay"></div>
+
+    <div class="contact-modal" id="contact-modal">
+        <i class="fas fa-envelope"></i>
+        <p><a href="mailto:guardianx@contact.com">Email: guardianx@contact.com</a></p>
+        <i class="fas fa-phone"></i>
+        <p><a href="tel:+1234567890">Phone: +123 456 7890</a></p>
+    </div>
+
+    <script src="save script.js"></script>
+</body>
+</html>

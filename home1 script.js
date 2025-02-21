@@ -28,8 +28,12 @@ function startEmergency() {
         // Display success message
         document.getElementById("success-message").style.display = "block";
         
-        // Generate the report based on emergency data
-        generateReport(emergencyData);
+        // Generate report after 1 second (to ensure DOM updates)
+        setTimeout(() => {
+            generateReport(emergencyData);
+        }, 1000);
+
+        displayMap(latitude, longitude);
 
     }, function(error) {
         alert("Unable to fetch location. Please try again.");
@@ -46,21 +50,37 @@ function sendNotification(emergencyData) {
 function generateReport(emergencyData) {
     const reportOutput = document.getElementById('report-output');
     const precautionsOutput = document.getElementById('precautions-output');
+
+    if (!reportOutput || !precautionsOutput) {
+        console.error("Error: Report or Precautions section not found.");
+        return;
+    }
+
+    console.log("Generating report...");
     
     // Simulated accident type (This can be dynamic based on backend processing)
-    const accidentType = "Vehicle Collision";
-    const reportSummary = `Accident Type: ${accidentType}<br>
-                           GPS Location: ${emergencyData.latitude}, ${emergencyData.longitude}<br>
-                           Timestamp: ${emergencyData.timestamp}<br>
-                           Image: <img src="uploaded-image.jpg" alt="Accident Image" width="200">`;
     
+    const accidentType = "Vehicle Collision";
+    // Fix Image Path
+    const accidentImagePath = "Accident-img.jpg";
+    const reportSummary = `
+        <strong>Accident Type:</strong> Vehicle Collision<br>
+        <strong>GPS Location:</strong> ${emergencyData.latitude}, ${emergencyData.longitude}<br>
+        <strong>Timestamp:</strong> ${emergencyData.timestamp}<br>
+        <strong>Image:</strong> <img src="${accidentImagePath}" onerror="this.style.display='none';" width="200">
+    `;
     // Display the report details
     reportOutput.innerHTML = reportSummary;
 
     // Simulate precautionary steps
-    const precautions = "1. Call for help immediately. <br> 2. If safe, move people away from danger. <br> 3. Wait for ambulance and avoid causing further accidents.";
-
+    const precautions = `
+        <strong>Precautions to Follow:</strong><br>
+        1. Call for help immediately. <br>
+        2. If safe, move people away from danger. <br>
+        3. Wait for an ambulance and avoid causing further accidents.
+    `;
     precautionsOutput.innerHTML = precautions;
+    console.log("Report and precautions updated.");
 
     // Display the map with the accident location
     displayMap(emergencyData.latitude, emergencyData.longitude);
@@ -79,6 +99,11 @@ function displayMap(lat, long) {
         map: map,
         title: "Accident Location"
     });
+    // Provide a clickable link for users to open Google Maps
+    const mapUrl = `https://www.google.com/maps?q=${lat},${long}`;
+    mapElement.innerHTML += `<p><a href="${mapUrl}" target="_blank">View on Google Maps</a></p>`;
+
+
 }
 
 // Handle file upload
